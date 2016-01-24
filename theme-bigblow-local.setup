@@ -1,0 +1,21 @@
+# -*- mode: org; -*-
+
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="assets/oporg/css/htmlize.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="assets/oporg/css/bigblow.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="assets/oporg/css/hideshow.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="assets/css/ox-ehtml.css"/>
+#+HTML_HEAD: <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+#+HTML_HEAD: <link href='https://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="assets/oporg/css/oporg.css"/>
+
+#+HTML_HEAD: <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+#+HTML_HEAD: <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+#+HTML_HEAD: <script src="assets/oporg/js/jquery.localscroll-min.js"></script>
+#+HTML_HEAD: <script src="assets/oporg/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+#+HTML_HEAD: <script src="assets/oporg/js/jquery.zclip.min.js"></script>
+#+HTML_HEAD: <script src="assets/oporg/js/bigblow.js"></script>
+#+HTML_HEAD: <script src="assets/oporg/js/hideshow.js"></script>
+#+HTML_HEAD: <script src="assets/js/jquery.stickytableheaders.min.js"></script>
+#+HTML_HEAD: <script src="assets/js/ox-ehtml.js"></script>
+#+HTML_HEAD: <script src="assets/oporg/js/oporg.js"></script>

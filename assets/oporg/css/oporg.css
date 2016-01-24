@@ -1,0 +1,84 @@
+body {
+	font-family: 'Droid Sans', Helvetica, Arial, sans;
+}
+
+.title .logo {
+	color: #FFF;
+	margin-right: 0.3em;
+}
+
+.outline-2 {
+	margin: 0 2em;
+}
+
+.outline-2 h2 {
+	display: none;
+}
+
+.outline-text-2 {
+	font-size: 1.2em;
+}
+
+.outline-4 {
+	background: #CDF;
+	margin: 1em 2em 1.2em 2em;
+	box-shadow: 0.2em 0.2em 0.4em #AAA;
+	padding: 1em;
+	border-radius: 0.5em;
+	border: 1px solid #BCF;
+}
+
+.outline-4.hsEmpty h4, .outline-4.hsCollapsed h4 {
+	border: none;
+}
+
+.outline-4.hsExpanded h4 {
+	padding-bottom: 0.5em;
+}
+
+.outline-5 {
+	background: #FCFCFC;
+	padding: 1em;
+	margin: 0.5em 0;
+	border-bottom: 1px solid #ABD;
+}
+
+.outline-text-5 {
+	padding: inherit;
+	padding: inherit;
+}
+
+textarea {
+	overflow-x: auto;
+	padding: inherit;
+	width: 100%;
+}
+
+.tag {
+	background: inherit;
+}
+
+.ellipsis {
+	float: left;
+	margin: 0;
+}
+
+.clear {
+	float: unset;
+}
+
+.outline-action {
+	margin: 0 0.5em 0 0;
+}
+
+.edit_in_place {
+	padding: 0.5em;
+}
+
+.edit_in_place:hover {
+	background: #CCC;
+}
+
+.edit_in_place p {
+	margin: 0;
+}
