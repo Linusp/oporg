@@ -1,0 +1,26 @@
+#+TITLE: OpOrg
+#+AUTHOR: Joseph Edwards VIII
+#+EMAIL: (concat "jedwards8th" at-sign "gmail.com")
+#+DESCRIPTION: Simple task management in your repo using emacs org-mode.
+#+KEYWORDS: org-mode, org-ehtml, bigblow, tasks
+#+LANGUAGE: en
+#+OPTIONS: toc:f
+
+#+html: <a href="http://opensource.org/licenses/GPL-3.0">
+#+html:   <img src="http://img.shields.io/:license-gpl-blue.svg" alt=":license-gpl-blue.svg" />
+#+html: </a>
+
+** Description
+
+Simply put, *OpOrg* is a simple task/project management system served by Emacs.
+
+More completely, it combines forks of two great open-source org-mode projects:
+
+- [[https://github.com/eschulte/org-ehtml][org-ehtml]] by Eric Schulte: edit org-mode files served by Emacs right in your browser.
+- [[https://github.com/fniessen/org-html-themes][org-html-themes]] by Fabrice Niessen: 'bigblow' provides a beautiful skin to org-exported HTML.
+
+*NOTE*: Both `org-ehtml` and `bigblow` have been modified either to work together, or to add functionality needed to make `oporg` work correctly.
+
+** License
+
+Released under the same GPL-3.0 license as `org-ehtml` and `org-html-themes`.
