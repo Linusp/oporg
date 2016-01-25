@@ -94,7 +94,7 @@ html, body {
 }
 
 .title {
-    text-align: left;
+    text-align: center;
 }
 
 #postamble {
@@ -436,36 +436,42 @@ img {
     border: 1px solid #EEE9C3;
     color: #302B13;
     font-weight: normal;
+    border-radius: 0.5em;
 }
 
 .TODO {
     background-color: #FED5D7;
     border: 1px solid #FC5158;
     color: #FC5158;
+    border-radius: 0.5em;
 }
 
-.STRT, .STARTED {
+.STRT, .STARTED, .DEV, .FAILED {
     background-color: #FEF2D4;
     border: 1px solid #FDBF3D;
     color: #FDBF3D;
+    border-radius: 0.5em;
 }
 
-.WAIT, .WAITING, .DLGT, .DELEGATED {
+.WAIT, .WAITING, .DLGT, .DELEGATED, .QA {
     background-color: #DFFFDF;
     border: 1px solid #55BA80;
     color: #55BA80;
+    border-radius: 0.5em;
 }
 
 .SDAY, .SOMEDAY, .DFRD, .DEFERRED {
     background-color: #D3EEFF;
     border: 1px solid #42B5FF;
     color: #42B5FF;
+    border-radius: 0.5em;
 }
 
-.DONE, .CANX, .CANCELED {
+.DONE, .CANX, .CANCELED, .CLOSED {
     background-color: #F2F2EE;
     border: 1px solid #969696;
     color: #969696;
+    border-radius: 0.5em;
 }
 
 .tag span {

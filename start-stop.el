@@ -1,5 +1,5 @@
 ;; Specify the oporg-docroot or just use current default-directory
-;; (setq oporg-docroot (expand-file-name "~/public_org/oporg"))
+;(setq oporg-docroot (expand-file-name "~/Dev/org-mode/org-html-themes/demo"))
 (setq oporg-docroot default-directory)
 
 ;; NOTE: the org-ehtml-docroot value should be fully expanded
@@ -12,7 +12,5 @@
 (require 'org-ehtml)
 (ws-start org-ehtml-handler 8888)
 
-;; Stop it!
-(ws-stop-all)
-
-(message "Default dir: %S" default-directory)
+;; Stop it! do: `M-x ws-stop-all RET' or evaluate the following:
+;; (ws-stop-all)

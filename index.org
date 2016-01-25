@@ -1,11 +1,11 @@
-#+TITLE:     OpOrg
-#+AUTHOR:    Joseph Edwards VIII
-#+EMAIL:     (concat "jedwards8th" at-sign "gmail.com")
-#+DATE:      2016-01-22
-#+LANGUAGE:  en
-#+OPTIONS:   H:4 num:nil toc:2
+#+TITLE: OpOrg
+#+AUTHOR: Joseph Edwards VIII
+# #+EMAIL: (concat "jedwards8th" at-sign "gmail.com")
+#+DATE: 2016-01-22
+#+LANGUAGE: en
+#+OPTIONS: H:4 num:nil toc:2
 
-#+SETUPFILE: theme-bigblow-local.setup
+#+SETUPFILE: theme-oporg-local.setup
 
 # +HTML: <div class="note clear-left">
 # +BEGIN_SRC emacs-lisp :exports both
@@ -30,15 +30,18 @@ Like stuff.
 
 Project "Corporate Marketing".
 
-*** TODO What is marketing, anyway?!?
+*** TODO What IS Marketing anyway?
 
 *** Background and research                                        :EDITABLE:
 
 **** TODO Who are the competitors?                                 :EDITABLE:
-Who are those pesky competitors?
-Right? Right?
+Words and stuff
 
-What about that?
+Plus additional stuff
+
+| col1 | col2 |
+|------+------|
+| this | that |
 
 **** QA What are our product's advantages?
 

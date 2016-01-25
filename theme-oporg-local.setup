@@ -17,5 +17,5 @@
 #+HTML_HEAD: <script src="assets/oporg/js/bigblow.js"></script>
 #+HTML_HEAD: <script src="assets/oporg/js/hideshow.js"></script>
 #+HTML_HEAD: <script src="assets/js/jquery.stickytableheaders.min.js"></script>
-#+HTML_HEAD: <script src="assets/js/ox-ehtml.js"></script>
 #+HTML_HEAD: <script src="assets/oporg/js/oporg.js"></script>
+#+HTML_HEAD: <script src="assets/js/ox-ehtml.js"></script>

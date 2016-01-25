@@ -1,26 +1,21 @@
 // Copyright (C) 2012 Eric Schulte <schulte.eric@gmail.com>
 // License GPLV3
+// This fork modified by Joseph Edwards VIII <jedwards8th@gmail.com>
 
 // after the page loads, run the set set_clickable function
 $(document).ready( function(){ set_clickable(); } );
 
 function set_clickable(){
+  oporg_process_outline();      // [JE] calls funcs in oporg.js
+
   // add edit button to every element with class="edit_in_place"
   $('.edit_button').remove();
   $('.edit_in_place')
-    .before('<input type="button" value="EDIT" class="edit_button">');
+  .before('<input type="button" value="EDIT" class="edit_button">');
 
   $('.edit_button').click(function(){
     var main = $(this).next();
-
-    // TODO
-    console.log(main);
-
     var org  = main.next().html();
-
-    // TODO: loop over all contents-begin where outline level < current
-    //       and unique id is same, then build up beg/end html that way
-
     var beg  = main.next().attr("contents-begin");
     var end  = main.next().attr("contents-end");
     var html = main.html();
