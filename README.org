@@ -3,6 +3,7 @@
 #+EMAIL: (concat "jedwards8th" at-sign "gmail.com")
 #+DESCRIPTION: Simple task management in your repo using emacs org-mode.
 #+KEYWORDS: org-mode, org-ehtml, bigblow, tasks
+#+STARTUP: showall indent
 #+LANGUAGE: en
 #+OPTIONS: toc:f
 
@@ -10,17 +11,79 @@
 #+html:   <img src="http://img.shields.io/:license-gpl-blue.svg" alt=":license-gpl-blue.svg" />
 #+html: </a>
 
-** Description
+When it's more than a toy, *OpOrg* will be a pretty, intuitive, if simplistic browser-based project management GUI for [[https://orgmode.org/][Org mode]] on [[https://www.gnu.org/software/emacs/][GNU Emacs]]. I want to replicate the core functionality of JIRA, for example, using =*.org= files, preferrably served by an Emacs web-server.
 
-Simply put, *OpOrg* is a simple task/project management system served by Emacs.
+"Why," you may ask, "would I want a GUI for org-mode?" You may ask this, but the answer is, "Because Emacs." Or maybe it's, "I have coworkers who would never use Emacs org-mode any other way, and I want them to. Because Emacs." Or maybe it's, "Because JIRA sucks, and org-mode doesn't."
 
-More completely, it combines forks of two great open-source org-mode projects:
+When completed, users will be able to edit and drag Scrum or Kanban tasks around the board, share notes, or manage more traditional TODO lists and outlines as they would in any other project management system. OR, they can edit the org file manually in Emacs, and see their changes reflected in the GUI.
 
-- [[https://github.com/eschulte/org-ehtml][org-ehtml]] by Eric Schulte: edit org-mode files served by Emacs right in your browser.
+* Description
+
+This is a work-in-progress. Currently, it combines forks of three great open-source Emacs/org-mode projects:
+
+- [[https://github.com/eschulte/emacs-web-server][emacs-web-server]] by Eric Schulte: A web server in Emacs running handlers written in Emacs Lisp.
+- [[https://github.com/eschulte/org-ehtml][org-ehtml]] by Eric Schulte: interactively view and edit Org-mode files through a web browser.
 - [[https://github.com/fniessen/org-html-themes][org-html-themes]] by Fabrice Niessen: 'bigblow' provides a beautiful skin to org-exported HTML.
 
-*NOTE*: Both `org-ehtml` and `bigblow` have been modified either to work together, or to add functionality needed to make `oporg` work correctly.
+Currently, you can edit TODO items marked with the =:EDITABLE:= tag. This is pure =org-ehtml= functionality in a nice, customized, 'bigblow' wrapper. Further editing functionality is still very much a WIP.
 
-** License
+* Installation
+
+See the links above for installing =web-server= and =org-ehtml= packages in Emacs. Both are available on MELPA. A customized 'bigblow' is included in this repo.
+
+An example =index.org= is included in this repo.
+
+This project is still *very* experimental, so if you're interested in taking it for a spin, you can try the following (in GNU/Linux) *after installing the above* dependencies.
+
+1. Create a =~/public_org= directory and clone this repo into it. Then make it public:
+
+#+begin_src bash
+mkdir ~/public_org && chmod 755 ~/public_org
+cd ~/public_org
+git clone https://github.com/joseph8th/oporg.git
+chmod -R 755 oporg
+#+end_src
+
+2. Add the following to your =init.el=, then restart Emacs or =(eval-buffer)=:
+
+#+begin_src emacs-lisp
+;;; oporg - Settings and convenience for oporg and org-ehtml
+(require 'org-ehtml)
+(setq org-todo-keywords
+      '((sequence "TODO" "DEV" "READY" "QA" "FAILED" "|" "DONE" "CLOSED")))
+(setq org-ehtml-docroot (expand-file-name "~/public_org"))
+(setq org-ehtml-everything-editable t)
+
+(defun public-org-start (approot port)
+  "Prompts for APPROOT and PORT to the run the web-server."
+  (interactive
+   (list
+    (read-string
+     (format "Path to app root (%s): " org-ehtml-docroot)
+     nil nil org-ehtml-docroot)
+    (read-string
+     (format "Port to run the web-server on (%d): " 8888)
+     nil nil 8888)
+    ))
+  (setq org-ehtml-docroot (expand-file-name approot))
+  (ws-start org-ehtml-handler port))
+
+(defun public-org-stop ()
+  (interactive)
+  (ws-stop-all))
+#+end_src
+
+3. Start the web-server with =M-x public-org-start RET ~/public_org/oporg RET RET= to serve =index.org=.
+4. Navigate to =http://localhost:8888= to see the demo.
+
+If that worked, you should be able to edit =index.org= in two ways: In the browser where items are editable, or in Emacs. You can also make items editable in Emacs, then edit them in the browser.
+
+To stop the web server, do =M-x public-org-stop=.
+
+* Contribute
+
+I welcome either issues or pull requests. You can even email me (like I actually check my email, hah).
+
+* License
 
 Released under the same GPL-3.0 license as `org-ehtml` and `org-html-themes`.
