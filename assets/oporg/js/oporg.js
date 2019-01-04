@@ -6,6 +6,10 @@ var oporg_outline = {
   'outline-2': []
 };
 
+$(function() {
+  $('.title').prepend('<i class="fa fa-connectdevelop logo"></i>');
+});
+
 function concat_outline_text(obj) {
   var eip_l = $(obj).find('.edit_in_place');
   var raw_l = $(obj).find('.raw-org');
@@ -22,6 +26,32 @@ function concat_outline_text(obj) {
       raw_l.eq(i).remove();
     }
   }
+}
+
+// From http://www.impressivewebs.com/textarea-auto-resize/
+function set_autoresize(elt) {
+  var txt = $(elt),
+      hiddenDiv = $(document.createElement('div')),
+      content = null;
+
+  // txt.addClass('txtstuff');  // <-- WHY?!?
+  hiddenDiv.addClass('hiddendiv common');
+  $('body').append(hiddenDiv);
+
+  // match widths
+  txt.outerWidth(txt.parent().width());
+  hiddenDiv.width(txt.width());
+
+  txt.on('keyup', function () {
+    content = $(this).val();
+    content = content.replace(/\n/g, '<br>');
+    hiddenDiv.html(content + '<br class="lbr">');
+    $(this).css('height', hiddenDiv.height());
+  });
+}
+
+function unset_autoresize() {
+  $('.hiddendiv.common').remove();
 }
 
 function oporg_process_outline() {
@@ -54,6 +84,7 @@ function oporg_process_outline() {
         // make_sortable outline-container-orgheadline[N]
         $(this).addClass('sortable');
 
+        // adding to the outline object
         oporg_outline['outline-'+olix].push({
           'level': olix,
           'id': $(this).attr('id'),
@@ -65,11 +96,4 @@ function oporg_process_outline() {
 
   // activate sortable
   $('.sortable').sortable();
-
-  // TODO
-  console.log("oporg_outline:", oporg_outline);
 }
-
-$(function() {
-  $('.title').prepend('<i class="fa fa-connectdevelop logo"></i>');
-});
