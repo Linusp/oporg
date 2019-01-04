@@ -3,7 +3,7 @@
 (setq oporg-docroot default-directory)
 
 ;; NOTE: the org-ehtml-docroot value should be fully expanded
-;(require 'org-ehtml)
+(require 'org-ehtml)
 (setq org-ehtml-docroot oporg-docroot)
 (setq org-todo-keywords
       '((sequence "TODO" "DEV" "READY" "QA" "FAILED" "|" "DONE" "CLOSED")))

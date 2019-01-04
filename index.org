@@ -3,6 +3,7 @@
 # #+EMAIL: (concat "jedwards8th" at-sign "gmail.com")
 #+DATE: 2016-01-22
 #+LANGUAGE: en
+#+STARTUP: showall indent
 #+OPTIONS: H:4 num:nil toc:2
 
 #+SETUPFILE: theme-oporg-local.setup
