@@ -39,41 +39,41 @@ This project is still *very* experimental, so if you're interested in taking it 
 
 1. Create a =~/public_org= directory and clone this repo into it. Then make it public:
 
-#+begin_src bash
-mkdir ~/public_org && chmod 755 ~/public_org
-cd ~/public_org
-git clone https://github.com/joseph8th/oporg.git
-chmod -R 755 oporg
-#+end_src
+   #+begin_src bash
+   mkdir ~/public_org && chmod 755 ~/public_org
+   cd ~/public_org
+   git clone https://github.com/joseph8th/oporg.git
+   chmod -R 755 oporg
+   #+end_src
 
 2. Add the following to your =init.el=, then restart Emacs or =(eval-buffer)=:
 
-#+begin_src emacs-lisp
-;;; oporg - Settings and convenience for oporg and org-ehtml
-(require 'org-ehtml)
-(setq org-todo-keywords
-      '((sequence "TODO" "DEV" "READY" "QA" "FAILED" "|" "DONE" "CLOSED")))
-(setq org-ehtml-docroot (expand-file-name "~/public_org"))
-(setq org-ehtml-everything-editable t)
+   #+begin_src emacs-lisp
+   ;;; oporg - Settings and convenience for oporg and org-ehtml
+   (require 'org-ehtml)
+   (setq org-todo-keywords
+         '((sequence "TODO" "DEV" "READY" "QA" "FAILED" "|" "DONE" "CLOSED")))
+   (setq org-ehtml-docroot (expand-file-name "~/public_org"))
+   (setq org-ehtml-everything-editable t)
 
-(defun public-org-start (approot port)
-  "Prompts for APPROOT and PORT to the run the web-server."
-  (interactive
-   (list
-    (read-string
-     (format "Path to app root (%s): " org-ehtml-docroot)
-     nil nil org-ehtml-docroot)
-    (read-string
-     (format "Port to run the web-server on (%d): " 8888)
-     nil nil 8888)
-    ))
-  (setq org-ehtml-docroot (expand-file-name approot))
-  (ws-start org-ehtml-handler port))
+   (defun public-org-start (approot port)
+     "Prompts for APPROOT and PORT to the run the web-server."
+     (interactive
+      (list
+       (read-string
+        (format "Path to app root (%s): " org-ehtml-docroot)
+        nil nil org-ehtml-docroot)
+       (read-string
+        (format "Port to run the web-server on (%d): " 8888)
+        nil nil 8888)
+       ))
+     (setq org-ehtml-docroot (expand-file-name approot))
+     (ws-start org-ehtml-handler port))
 
-(defun public-org-stop ()
-  (interactive)
-  (ws-stop-all))
-#+end_src
+   (defun public-org-stop ()
+     (interactive)
+     (ws-stop-all))
+   #+end_src
 
 3. Start the web-server with =M-x public-org-start RET ~/public_org/oporg RET RET= to serve =index.org=.
 4. Navigate to =http://localhost:8888= to see the demo.
