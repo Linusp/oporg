@@ -17,6 +17,8 @@ When it's more than a toy, *OpOrg* will be a pretty, intuitive, if simplistic br
 
 When completed, users will be able to edit and drag Scrum or Kanban tasks around the board, share notes, or manage more traditional TODO lists and outlines as they would in any other project management system. OR, they can edit the org file manually in Emacs, and see their changes reflected in the GUI.
 
+[[./assets/images/oporg-screenshot.png]]
+
 * Description
 
 This is a work-in-progress. Currently, it combines forks of three great open-source Emacs/org-mode projects:
